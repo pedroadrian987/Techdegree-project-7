@@ -43,6 +43,7 @@ function addPhraseToDisplay(phraseArray){    //this function shows the phrase
     let k = phraseArray[j]; //variable for the letter in phraseArray
     $("#phrase ul").append("<li>" + k + "</li>");  //this appends a list item with an phraseArray element
     $("ul li:not(:contains( ))").addClass("letter"); //this makes every element that contains a space in the "ul li" elements to not be considered when adding the class "letter"
+    $("ul li:contains( )").addClass("space");
   }
 }
 
@@ -132,11 +133,11 @@ $('.btn__reset').click(function(){  //function that start the game and sets all 
     }
   });
 
-
-  $(document).on("keyup", EventTarget, function(){ //this event is for the keyboard
+  $(document).on("keyup", EventTarget, function(event){ //this event is for the keyboard
     checkLetter(targt);
     checkWin();
     console.log(letterFound);
+    event.stopImmediatePropagation();
     return letterFound;
   });
 });
