@@ -136,7 +136,6 @@ $('.btn__reset').click(function(){  //function that start the game and sets all 
   $(document).on("keyup", EventTarget, function(event){ //this event is for the keyboard
     checkLetter(targt);
     checkWin();
-    console.log(letterFound);
     event.stopImmediatePropagation();
     return letterFound;
   });
